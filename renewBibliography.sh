@@ -6,7 +6,7 @@ BASE_DIR="$(pwd)"
 SRC_DIR="$BASE_DIR/src"
 OUT_DIR="$BASE_DIR/out"
 MAIN_BASENAME="main"  # corresponds to main.tex
-BFC_FILE="$OUT_DIR/main.bcf"
+BFC_FILE="$OUT_DIR/Visopdracht_TimVanNaarden.bcf"
 
 echo "=== Running biber ==="
 echo "Working directory: $BASE_DIR"

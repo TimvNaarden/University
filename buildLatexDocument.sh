@@ -31,6 +31,7 @@ pdflatex \
   -output-format=pdf \
   "-output-directory=$OUT_DIR" \
   -interaction=batchmode \
+  -jobname="Visopdracht_TimVanNaarden" \
   "$MAIN_TEX"
 
 echo

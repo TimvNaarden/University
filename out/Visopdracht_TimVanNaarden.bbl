@@ -1,0 +1,307 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{Inwoners}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=250c51527f347066847969f002be67a2}{%
+           family={CBS},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {nl-NL}%
+      }
+      \strng{namehash}{250c51527f347066847969f002be67a2}
+      \strng{fullhash}{250c51527f347066847969f002be67a2}
+      \strng{fullhashraw}{250c51527f347066847969f002be67a2}
+      \strng{bibnamehash}{250c51527f347066847969f002be67a2}
+      \strng{authorbibnamehash}{250c51527f347066847969f002be67a2}
+      \strng{authornamehash}{250c51527f347066847969f002be67a2}
+      \strng{authorfullhash}{250c51527f347066847969f002be67a2}
+      \strng{authorfullhashraw}{250c51527f347066847969f002be67a2}
+      \field{extraname}{1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Al sinds 1899 telt het CBS hoeveel inwoners Nederland heeft. De volkstellingen zijn de oudste statistieken van het CBS.}
+      \field{day}{8}
+      \field{journaltitle}{Hoeveel inwoners telt Nederland? - Nederland in cijfers 2023 {|} CBS}
+      \field{month}{9}
+      \field{note}{Last Modified: 2023-09-08}
+      \field{shorttitle}{Hoeveel inwoners telt {Nederland}?}
+      \field{title}{Hoeveel inwoners telt {Nederland}? - {Nederland} in cijfers 2023 {|} {CBS}}
+      \field{type}{webpagina}
+      \field{urlday}{22}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Tim\\Zotero\\storage\\TIEAVDSS\\hoeveel-inwoners-telt-nederland.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://longreads.cbs.nl/nederland-in-cijfers-2023/hoeveel-inwoners-telt-nederland
+      \endverb
+      \verb{url}
+      \verb https://longreads.cbs.nl/nederland-in-cijfers-2023/hoeveel-inwoners-telt-nederland
+      \endverb
+    \endentry
+    \entry{BBP}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=250c51527f347066847969f002be67a2}{%
+           family={CBS},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {nl-NL}%
+      }
+      \strng{namehash}{250c51527f347066847969f002be67a2}
+      \strng{fullhash}{250c51527f347066847969f002be67a2}
+      \strng{fullhashraw}{250c51527f347066847969f002be67a2}
+      \strng{bibnamehash}{250c51527f347066847969f002be67a2}
+      \strng{authorbibnamehash}{250c51527f347066847969f002be67a2}
+      \strng{authornamehash}{250c51527f347066847969f002be67a2}
+      \strng{authorfullhash}{250c51527f347066847969f002be67a2}
+      \strng{authorfullhashraw}{250c51527f347066847969f002be67a2}
+      \field{extraname}{2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{De grootte van de Nederlandse economie, die gemeten wordt in het bruto binnenlands product (bbp) was in 2023 ruim 1 biljoen euro.}
+      \field{day}{4}
+      \field{journaltitle}{Hoe groot is de Nederlandse economie? - Nederland in cijfers 2024 {|} CBS}
+      \field{month}{9}
+      \field{note}{Last Modified: 2024-09-04}
+      \field{shorttitle}{Hoe groot is de {Nederlandse} economie?}
+      \field{title}{Hoe groot is de {Nederlandse} economie? - {Nederland} in cijfers 2024 {|} {CBS}}
+      \field{type}{webpagina}
+      \field{urlday}{21}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Tim\\Zotero\\storage\\SCBRL8HN\\hoe-groot-is-de-nederlandse-economie.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://longreads.cbs.nl/nederland-in-cijfers-2024/hoe-groot-is-de-nederlandse-economie
+      \endverb
+      \verb{url}
+      \verb https://longreads.cbs.nl/nederland-in-cijfers-2024/hoe-groot-is-de-nederlandse-economie
+      \endverb
+    \endentry
+    \entry{NOS}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8ffe23d79ecc928cd2202d4ee5d93c91}{%
+           family={NOS},
+           familyi={N\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {nl}%
+      }
+      \strng{namehash}{8ffe23d79ecc928cd2202d4ee5d93c91}
+      \strng{fullhash}{8ffe23d79ecc928cd2202d4ee5d93c91}
+      \strng{fullhashraw}{8ffe23d79ecc928cd2202d4ee5d93c91}
+      \strng{bibnamehash}{8ffe23d79ecc928cd2202d4ee5d93c91}
+      \strng{authorbibnamehash}{8ffe23d79ecc928cd2202d4ee5d93c91}
+      \strng{authornamehash}{8ffe23d79ecc928cd2202d4ee5d93c91}
+      \strng{authorfullhash}{8ffe23d79ecc928cd2202d4ee5d93c91}
+      \strng{authorfullhashraw}{8ffe23d79ecc928cd2202d4ee5d93c91}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{De belangrijkste thema's in kaart}
+      \field{journaltitle}{Europa in Cijfers}
+      \field{title}{Europa in cijfers}
+      \field{urlday}{22}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Tim\\Zotero\\storage\\8M23CW4M\\europa-in-cijfers.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://app.nos.nl/op3/europa-in-cijfers/?thema=veiligheid
+      \endverb
+      \verb{url}
+      \verb https://app.nos.nl/op3/europa-in-cijfers/?thema=veiligheid
+      \endverb
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global/global}
+    \entry{Inwoners}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=250c51527f347066847969f002be67a2}{%
+           family={CBS},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {nl-NL}%
+      }
+      \strng{namehash}{250c51527f347066847969f002be67a2}
+      \strng{fullhash}{250c51527f347066847969f002be67a2}
+      \strng{fullhashraw}{250c51527f347066847969f002be67a2}
+      \strng{bibnamehash}{250c51527f347066847969f002be67a2}
+      \strng{authorbibnamehash}{250c51527f347066847969f002be67a2}
+      \strng{authornamehash}{250c51527f347066847969f002be67a2}
+      \strng{authorfullhash}{250c51527f347066847969f002be67a2}
+      \strng{authorfullhashraw}{250c51527f347066847969f002be67a2}
+      \field{extraname}{1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Al sinds 1899 telt het CBS hoeveel inwoners Nederland heeft. De volkstellingen zijn de oudste statistieken van het CBS.}
+      \field{day}{8}
+      \field{journaltitle}{Hoeveel inwoners telt Nederland? - Nederland in cijfers 2023 {|} CBS}
+      \field{month}{9}
+      \field{note}{Last Modified: 2023-09-08}
+      \field{shorttitle}{Hoeveel inwoners telt {Nederland}?}
+      \field{title}{Hoeveel inwoners telt {Nederland}? - {Nederland} in cijfers 2023 {|} {CBS}}
+      \field{type}{webpagina}
+      \field{urlday}{22}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Tim\\Zotero\\storage\\TIEAVDSS\\hoeveel-inwoners-telt-nederland.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://longreads.cbs.nl/nederland-in-cijfers-2023/hoeveel-inwoners-telt-nederland
+      \endverb
+      \verb{url}
+      \verb https://longreads.cbs.nl/nederland-in-cijfers-2023/hoeveel-inwoners-telt-nederland
+      \endverb
+    \endentry
+    \entry{BBP}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=250c51527f347066847969f002be67a2}{%
+           family={CBS},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {nl-NL}%
+      }
+      \strng{namehash}{250c51527f347066847969f002be67a2}
+      \strng{fullhash}{250c51527f347066847969f002be67a2}
+      \strng{fullhashraw}{250c51527f347066847969f002be67a2}
+      \strng{bibnamehash}{250c51527f347066847969f002be67a2}
+      \strng{authorbibnamehash}{250c51527f347066847969f002be67a2}
+      \strng{authornamehash}{250c51527f347066847969f002be67a2}
+      \strng{authorfullhash}{250c51527f347066847969f002be67a2}
+      \strng{authorfullhashraw}{250c51527f347066847969f002be67a2}
+      \field{extraname}{2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{De grootte van de Nederlandse economie, die gemeten wordt in het bruto binnenlands product (bbp) was in 2023 ruim 1 biljoen euro.}
+      \field{day}{4}
+      \field{journaltitle}{Hoe groot is de Nederlandse economie? - Nederland in cijfers 2024 {|} CBS}
+      \field{month}{9}
+      \field{note}{Last Modified: 2024-09-04}
+      \field{shorttitle}{Hoe groot is de {Nederlandse} economie?}
+      \field{title}{Hoe groot is de {Nederlandse} economie? - {Nederland} in cijfers 2024 {|} {CBS}}
+      \field{type}{webpagina}
+      \field{urlday}{21}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Tim\\Zotero\\storage\\SCBRL8HN\\hoe-groot-is-de-nederlandse-economie.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://longreads.cbs.nl/nederland-in-cijfers-2024/hoe-groot-is-de-nederlandse-economie
+      \endverb
+      \verb{url}
+      \verb https://longreads.cbs.nl/nederland-in-cijfers-2024/hoe-groot-is-de-nederlandse-economie
+      \endverb
+    \endentry
+    \entry{NOS}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8ffe23d79ecc928cd2202d4ee5d93c91}{%
+           family={NOS},
+           familyi={N\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {nl}%
+      }
+      \strng{namehash}{8ffe23d79ecc928cd2202d4ee5d93c91}
+      \strng{fullhash}{8ffe23d79ecc928cd2202d4ee5d93c91}
+      \strng{fullhashraw}{8ffe23d79ecc928cd2202d4ee5d93c91}
+      \strng{bibnamehash}{8ffe23d79ecc928cd2202d4ee5d93c91}
+      \strng{authorbibnamehash}{8ffe23d79ecc928cd2202d4ee5d93c91}
+      \strng{authornamehash}{8ffe23d79ecc928cd2202d4ee5d93c91}
+      \strng{authorfullhash}{8ffe23d79ecc928cd2202d4ee5d93c91}
+      \strng{authorfullhashraw}{8ffe23d79ecc928cd2202d4ee5d93c91}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{De belangrijkste thema's in kaart}
+      \field{journaltitle}{Europa in Cijfers}
+      \field{title}{Europa in cijfers}
+      \field{urlday}{22}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Tim\\Zotero\\storage\\8M23CW4M\\europa-in-cijfers.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://app.nos.nl/op3/europa-in-cijfers/?thema=veiligheid
+      \endverb
+      \verb{url}
+      \verb https://app.nos.nl/op3/europa-in-cijfers/?thema=veiligheid
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

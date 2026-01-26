@@ -5,8 +5,8 @@ set -e  # stop on error
 BASE_DIR="$(pwd)"
 SRC_DIR="$BASE_DIR/src"
 OUT_DIR="$BASE_DIR/out"
-MAIN_BASENAME="main"
-BFC_FILE="$OUT_DIR/main.bcf"
+MAIN_BASENAME="Visopdracht_TimVanNaarden"
+BFC_FILE="$OUT_DIR/Visopdracht_TimVanNaarden.bcf"
 
 echo "=== FULL RENEW BUILD ==="
 echo "Working directory: $BASE_DIR"
@@ -33,7 +33,7 @@ echo
 
 # If main.bcf doesn't exist yet, we need a first LaTeX run to generate it
 if [ ! -f "$BFC_FILE" ]; then
-  echo "⚠️ main.bcf not found — running initial LaTeX build to generate it ..."
+  echo "⚠️ Visopdracht_TimVanNaarden.bcf not found — running initial LaTeX build to generate it ..."
   bash "$BASE_DIR/buildLatexDocument.sh"
   echo "✅ Initial LaTeX build completed."
   echo
