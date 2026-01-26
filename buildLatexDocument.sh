@@ -30,8 +30,6 @@ pdflatex \
   -synctex=1 \
   -output-format=pdf \
   "-output-directory=$OUT_DIR" \
-  "-aux-directory=$OUT_DIR" \
-  "-include-directory=$SRC_DIR" \
   -interaction=batchmode \
   "$MAIN_TEX"
 
