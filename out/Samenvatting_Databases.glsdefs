@@ -1,0 +1,364 @@
+\glsdefs@newdocentry{SQL}%
+{%
+name={\acronymfont {\glsentryshort {SQL}}},%
+sort={SQL},%
+type={main},%
+first={SQL},%
+firstplural={SQLs},%
+text={SQL},%
+plural={SQLs},%
+description={Sequal query language},%
+descriptionplural={Sequal query language},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Sequal query language},%
+longplural={Sequal query languages},%
+short={SQL},%
+shortplural={SQLs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ANSI}%
+{%
+name={\acronymfont {\glsentryshort {ANSI}}},%
+sort={ANSI},%
+type={main},%
+first={ANSI},%
+firstplural={ANSIs},%
+text={ANSI},%
+plural={ANSIs},%
+description={American National Standards Institute},%
+descriptionplural={American National Standards Institute},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={American National Standards Institute},%
+longplural={American National Standards Institutes},%
+short={ANSI},%
+shortplural={ANSIs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{declarative}%
+{%
+name={Declarative},%
+sort={Declarative},%
+type={main},%
+first={Declarative},%
+firstplural={Declaratives},%
+text={Declarative},%
+plural={Declaratives},%
+description={Denoting high-level programming languages which can be used to solve problems without requiring the programmer to specify an exact procedure to be followed},%
+descriptionplural={Denoting high-level programming languages which can be used to solve problems without requiring the programmer to specify an exact procedure to be followed},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{locking}%
+{%
+name={Locking Techniques},%
+sort={Locking Techniques},%
+type={main},%
+first={Locking Techniques},%
+firstplural={Locking Techniquess},%
+text={Locking Techniques},%
+plural={Locking Techniquess},%
+description={By allowing only one thread access simultaneously, they prevent race conditions and grant safe access},%
+descriptionplural={By allowing only one thread access simultaneously, they prevent race conditions and grant safe access},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{schema}%
+{%
+name={Schema},%
+sort={Schema},%
+type={main},%
+first={Schema},%
+firstplural={Schemas},%
+text={Schema},%
+plural={Schemas},%
+description={An SQL Table or Relation},%
+descriptionplural={An SQL Table or Relation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{attributes}%
+{%
+name={Attributes},%
+sort={Attributes},%
+type={main},%
+first={Attributes},%
+firstplural={Attributess},%
+text={Attributes},%
+plural={Attributess},%
+description={Fields or properties},%
+descriptionplural={Fields or properties},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{degree}%
+{%
+name={Degree},%
+sort={Degree},%
+type={main},%
+first={Degree},%
+firstplural={Degrees},%
+text={Degree},%
+plural={Degrees},%
+description={Amount of properties a table or relation has},%
+descriptionplural={Amount of properties a table or relation has},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{relation}%
+{%
+name={Relation},%
+sort={Relation},%
+type={main},%
+first={Relation},%
+firstplural={Relations},%
+text={Relation},%
+plural={Relations},%
+description={Different fields linked together, such as: movid x title x year x rating. Often displayed in tables when using SQL},%
+descriptionplural={Different fields linked together, such as: movid x title x year x rating. Often displayed in tables when using SQL},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{tuples}%
+{%
+name={Tuples},%
+sort={Tuples},%
+type={main},%
+first={Tuples},%
+firstplural={Tupless},%
+text={Tuples},%
+plural={Tupless},%
+description={A row of objects, often denoted using (x, y)},%
+descriptionplural={A row of objects, often denoted using (x, y)},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{primaryKey}%
+{%
+name={Primary key},%
+sort={Primary key},%
+type={main},%
+first={Primary key},%
+firstplural={Primary keys},%
+text={Primary key},%
+plural={Primary keys},%
+description={Chosen from the candidate keys},%
+descriptionplural={Chosen from the candidate keys},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{superKey}%
+{%
+name={Super key},%
+sort={Super key},%
+type={main},%
+first={Super key},%
+firstplural={Super keys},%
+text={Super key},%
+plural={Super keys},%
+description={Attribute or combination of attributes that can uniquely define a relation},%
+descriptionplural={Attribute or combination of attributes that can uniquely define a relation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{candidateKeys}%
+{%
+name={Candidate keys},%
+sort={Candidate keys},%
+type={main},%
+first={Candidate keys},%
+firstplural={Candidate keyss},%
+text={Candidate keys},%
+plural={Candidate keyss},%
+description={A set of minimalistic super keys, meaning that there is not a super key that is build out of less attributes},%
+descriptionplural={A set of minimalistic super keys, meaning that there is not a super key that is build out of less attributes},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{foreignKey}%
+{%
+name={Foreign Key},%
+sort={Foreign Key},%
+type={main},%
+first={Foreign Key},%
+firstplural={Foreign Keys},%
+text={Foreign Key},%
+plural={Foreign Keys},%
+description={A set of attributes, that servers as a candidate key in another relation},%
+descriptionplural={A set of attributes, that servers as a candidate key in another relation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+

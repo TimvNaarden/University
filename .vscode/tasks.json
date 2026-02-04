@@ -1,0 +1,56 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Latex Document",
+      "type": "shell",
+      "command": "C:/Program Files/Git/bin/bash.exe",
+      "args": [
+        "-lc",
+        "./buildLatexDocument.sh"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+   },
+   {
+      "label": "Full Build",
+      "type": "shell",
+      "command": "C:/Program Files/Git/bin/bash.exe",
+      "args": [
+        "-lc",
+        "./fullBuild.sh"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+   },
+      {
+      "label": "Renew Bibliography",
+      "type": "shell",
+      "command": "C:/Program Files/Git/bin/bash.exe",
+      "args": [
+        "-lc",
+        "./renewBibliography.sh"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+   }
+  ]
+}

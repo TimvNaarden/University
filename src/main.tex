@@ -1,0 +1,202 @@
+% main.tex
+% Universitaire Papers - Full Documentation & Usage Guide
+% Author: Matt
+% Purpose: A self-contained manual that explains paperSettings.tex,
+%          standardCommands.tex and demonstrates how to use the macros.
+%
+% Save this file as main.tex in the root of the repo alongside:
+%   - paperSettings.tex
+%   - standardCommands.tex
+%   - main.bib
+%
+% Compile with: buildLatexDocument.sh (or fullBuild.sh)
+% Or upload to Overleaf and compile there.
+% -----------------------------------------
+
+% ----------- Document settings -----------
+\documentclass[nonacm, sigconf, balance=truu]{acmart}
+
+\include{src/core/paperSettings} % import custom general paper settings
+\include{src/core/standardCommands} % import custom commands and packages
+
+\def\documentTitle      {Zusammenfassung databases} % replace with actual document title
+\def\documentSubtitle   {} % replace with actual subtitle if any, else leave empty
+\def\authorName         {Tim v. Naarden} % replace with actual author name
+\def\authorEmail        {T.vannaarden@students.uu.nl} % replace with actual author email
+\def\institutionName    {Universiteit Utrecht} % replace with actual institution name
+\def\institutionCountry {Nederland} % replace with actual institution location
+\def\institutionCity    {Utrecht} % replace with actual institution location
+
+\def\UseGlossery        {true} % true om een begrippenlijst aan het einde toe tevoegen 
+\def\editorsVersion     {false} % true om editorsnote e.d. te tonen, false voor verbergen
+\def\makeTitlePage      {true}  % true om titelpagina te maken, false om over te slaan
+\def\makeTOCpage        {true}  % true om inhoudsopgave te maken, false om over te slaan
+\def\makeBibliography   {false}  % true om bibliografie te maken, false om over te slaan
+\def\listMark           {-} % itemize marker, e.g. '-', '*', '\textbullet', etc.
+% -----------------------------------------
+\usepackage{float}
+\usepackage{listings}
+
+\begin{document}
+    \onecolumn
+    \section{Intro}
+    \subsection{Organization}
+    \textbf{Practicum(Couples):}
+    \begin{itemize}
+        \item{Opgave 1: Case description, modeling, schema design}
+        \item{Opgave 2: Reconsider your design using AI}
+    \end{itemize}
+    \textbf{Assignments(3x) mandatory:}
+    \begin{itemize}
+        \item{Indication for questions final test}
+        \item{Strong corrolation between test results and attention in the lectures}
+    \end{itemize}
+    
+    \sub{What is a database?} 
+    Storing data in tables, using a relational approach. Every entry has it's own primary key 
+    used to uniquely identify a table row. For example: A booknumber or a social security number.
+    \newline
+    \noindent Databases are omnipresent and the technology is directly used in the software project. Furthermore, 
+    it forms the backbone of most information systems. Studying database technology provides insight in 
+    general computer science principles:
+    \begin{itemize}
+        \item{Layered software architecture}
+        \item{Mathematical modeling}
+        \item{Application of predicate logic and set theory}
+    \end{itemize}
+
+    \subsection{History of databases}
+    In the eighties, the relational data model received widespread commercial attention. 
+    \newline
+    \noindent \acrshort{SQL} became the standard in 1986
+    \newline 
+    \noindent SQL92/SQL2, SQL all follow \acrshort{ANSI} standards
+
+    \section{SQL}
+    \acrshort{SQL} is a \gls{declarative} language.
+    \begin{lstlisting}
+        SELECT Name 
+        FROM Book, Loan, Reader
+        Where Book.Title = 'Fun-Fishing'
+            AND Book.Bno = Loan.Bno
+            AND Loan.Rno = Reader.Rno
+    \end{lstlisting}
+    \noindent The example above returns a list of people to whom the book `Fun-Fishing' is currently being loaned.
+    From the table Book, it selects every entry or row with the name `Fun-Fishing' and checks whether the 
+    booknumber matches a booknumber in the table Loan. It then fetches the reader from the table reader based 
+    on the reader number that matches the entry in the loan table. 
+    \newline 
+    A user can fetch(= request) data from a database thru a User interface application program, which sends \acrshort{SQL}
+    queries(= statements/prompt) to the database server. A developer or administrator can update the database using queries. 
+    The database server itself handles storing and accessing the date from the database. As is illustrated in the diagram below:
+    \newline
+    \begin{figure}[h]
+        \includegraphics[width=400pt]{./src/Images/UserGraph.jpg}
+    \end{figure}   
+    \subsection{Normalization} To improve readability, manageability and adequate representation(avoiding NULLs) data usually gets 
+    separated in different tables. If we take a look at out library example, by having a different table for: Books, Loans and Readers,
+    we make can just delete a entry in the table loans, when a book is returned. This has as advantage that when a Reader isn't reading
+    a book, there are not a bunch of NULL entry's in our data table. This also solves a interesting problem when allowing a reader to 
+    loan multiple books, using multiple table's, a new entry in Loans can be made. Instead of some complicated logic using arrays in the
+    general table. The image below depicts a example when looking at our library example: 
+    \newline
+    \begin{figure}[h]
+        \includegraphics[width=\linewidth]{./src/Images/TableSeperated.jpg}
+    \end{figure}
+    \subsection{Transactions} When working with transactions, it is important to either finish everything or nothing. When withdrawing 
+    cash for example, it would be suboptimal for the bank if a ATM prints out your cash, but then a crash happens and your balance doesn't
+    get updated. It is either all or nothing. \\
+    \noindent Another problem that might occur is concurrency, when two queries are being executed at the same time, there might happen some 
+    unexpected results. Using \gls{Locking} this can be solved. 
+
+    \section{Relational model}
+    Take the following SQL Table for example:
+    \begin{table}[h]
+        \begin{tabular}{llll}
+            \multicolumn{4}{l}{Movie}                            \\
+            movid     & title                    & year & rating \\
+            tt0469494 & There Will Be Blood      & 2007 & 8,1    \\
+            tt0086879 & Amadeus                  & 1984 & 8,4    \\
+            tt0102926 & The Silence of the Lambs & 1991 & 8,6    \\
+            tt0110413 & Léon                     & 1994 & 8,7    \\
+            tt0078788 & Apocalypse Now           & 1979 & 8,5   
+        \end{tabular}
+    \end{table}
+    The \gls{shema} of this \gls{relation} is Movie(movid, title, year, rating)\\
+    There are five \gls{tuples}, every entry or row with the corresponding row number.\\
+    This \gls{schema} has four \gls{attributes}, namely: movid, title, year, rating.\\
+    There are four columns, defined by \gls{attributes}, each containing five values.\\
+    This makes it so that the \gls{degree} of the \gls{relation} Movie is four.\\
+    \newpage
+    \subsection{Identifying}
+    Each SQL table has one \gls{primaryKey}, this key is used to uniquely identify a row 
+    or in this case a movie. Note however that \gls{tuples} are also identified by (movid, title),
+    (movid, year) or any combination containing a key. \\
+    A \gls{superKey} is a attribute or combination of \gls{attributes} that can uniquely identify
+    every entry. In the example above, this would be movid. However, since in the example above 
+    every field can be used as a \gls{superKey}, it is important to chose your \gls{primaryKey} wisely, 
+    since in the future there will be more movies with the same year or rating. \\
+    The \gls{primaryKey} is chosen from a set of \gls{candidateKeys}, which are minimalistic super keys. 
+    Example: (movid, title) is a \gls{superKey} since it can identify all entry, however it is not a candidate 
+    key, since (movid) can also identify every entry. \\
+
+    \subsection{Constraining}
+    Take a look at the following creation of a table:
+    \begin{lstlisting}
+        CREATE TABLE Book (
+        bookid              integer         not null,
+        title               varchar(100)    not null,
+        author              varchar(30)     not null,
+        price               float,
+        date_of_purchase    date,
+        publisher_id        varchar (6),
+        CONSTRAINT Book_pk PRIMARY KEY (bookid),
+        CONSTRAINT Book_fk_Publisher FOREIGN KEY (publisher_id)
+            REFERENCES Publisher(publisher_id)
+        );
+    \end{lstlisting}
+    Here, CONSTRAINT Book\_pk, create a constraint named Book\_pk that says: bookid is the primary key. \\
+    CONSTRAINT Book\_fk\_Publisher says that the attribute publisher\_id serves as a foreign key for the table Publisher
+
+    \section{Relational algebra}
+    The Unary operator $\sigma$, is used for a selection with complex predicates. To notation is as follows: \\
+    \[
+    \sigma_{birth\_year < 1990 \wedge gender='female'}(\text{Actor}) 
+    \quad \text{or} \quad
+    \sigma_{Country='Netherlands' \vee Country='Belgium'}(\text{Actor})
+    \]
+    Here, Actor denotes the name of the relation or table. 
+    \newline
+    \noindent Another unary operator $\pi$, is used for projection. The following statement will return the title and year columns 
+    from our movies table: \[\pi_{title,year}(\text{Movie})\] \\
+    Following this syntax a composition of projection and selection can be constructed: 
+    \[
+    \pi_{name, birth\_year}
+    \left(
+        \sigma_{birth\_year < 1960}(\text{Actor})
+    \right)
+    \]
+    The binary operators $\cup$, $\cap$, $\-$ and $\times$ for the cartesian product all behave in a similar manner, where the result of the cartesian
+    product is just a bigger table containing all the possible outcomes like so: \\
+    \begin{lstlisting}
+        var Cartesianproduct = [];
+        for(var rowA in TableA) {
+            for(var rowB in TableB){
+                Cartesianproduct.add(rowA + rowB)
+            }
+        }
+    \end{lstlisting}
+    \subsection{Joining tables}
+    Using the binary operator natural join $\bowtie$, two sets can be combined using the default matching condition. A \gls{foreignKey}
+    can help you with what to expect. From each row where the foreign key matches that of the other table, these row's are combined 
+    together. When row A from table 1 matches with row B \& C from table 2, the record A \+ B \& A \+ C are added to the result. 
+    \newline 
+    The binary operator theta-join $\bowtie$_{$\emptyset$} behaves mostly the same way as natural join, however $\emptyset$ defines a matching
+    condition. In the image below this is illustrated: 
+    \begin{figure}[h]
+        \includegraphics[width=\textwidth]{./src/Images/ThetaJoinExample.jpg}
+    \end{figure}
+    In this example, the rows where the attribute A from the relation R matches the attribute C from relation S and the 
+    attribute B from relation R is bigger than attribute D from relation S are joined. 
+
+\end{document}

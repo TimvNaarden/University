@@ -1,0 +1,422 @@
+% ============================================================
+% LATEX CUSTOM COMMANDS LIBRARY
+% Author: Matt
+% Version: v1.0
+% ------------------------------------------------------------
+% CONTENTS:
+%   1.  SPACING & LAYOUT UTILITIES
+%   2.  TEXT PLACEHOLDER & FORMATTING UTILITIES
+%   3.  EDITOR TOOLS & COMMENTS
+%   4.  TEXT PROCESSING UTILITIES
+%   5.  SIMPLE TABLE ENVIRONMENT
+%
+% This library provides a modular set of reusable LaTeX commands
+% to streamline writing, reviewing, and formatting workflow.
+%
+% ============================================================
+
+
+% ============================================================
+% 1. SPACING & LAYOUT UTILITIES
+% ============================================================
+%
+% These commands simplify vertical spacing and layout adjustments.
+% Instead of manually using \vspace repeatedly, these commands
+% make your document cleaner and more readable.
+%
+% Usage examples:
+%
+%   \vsmall    → Small vertical gap (~0.1 cm)
+%   \vmed      → Medium vertical gap (~0.3 cm)
+%   \vlarge    → Large vertical gap (~0.6 cm)
+%
+% ============================================================
+\newcommand{\vsmall}{\vspace{0.1cm}}
+\newcommand{\vmed}{\vspace{0.3cm}}
+\newcommand{\vlarge}{\vspace{0.6cm}}
+\newlength{\remainingspace}%
+\setlength{\remainingspace}{\dimexpr\pagegoal-\pagetotal-1em\relax}%
+
+% ------------------------------------------------------------
+% Centered italicized question or section prompt
+%
+% Usage:
+%   \question{What is the impact of this design choice?}
+% ------------------------------------------------------------
+\newcommand{\question}[1]{%
+    \vsmall%
+    \begin{center}%
+        \parbox{0.8\linewidth}{\centering\textit{#1}}%
+    \end{center}%
+    \vsmall%
+}
+
+
+% ============================================================
+% 2. TEXT PLACEHOLDER & FORMATTING UTILITIES
+% ============================================================
+%
+% Commands for generating placeholder text, APA-style quotes,
+% and custom citation formatting.
+%
+% Includes:
+%   - \lorem                → Generates a block of lorem ipsum text
+%   - \uitspraak{txt}{key}{p.}  → APA-style quotes with word count logic
+%   - \prepostparencite[...]{}{} → Adds pre/post text to citations
+%
+% ============================================================
+
+% --- Lorem Ipsum Placeholder --------------------------------
+%
+% Usage:
+%   \lorem
+%
+% Outputs a single paragraph of lorem ipsum placeholder text.
+% ------------------------------------------------------------
+\newcommand{\lorem}{%
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget tortor a urna ornare pellentesque.
+    Integer sit amet purus nec sem iaculis euismod. Duis at ipsum eu libero pharetra egestas.
+    Quisque eleifend odio velit, at sollicitudin metus dictum eu. Integer nec mi congue,
+    gravida nibh sed, faucibus mauris. Sed vel ipsum lobortis felis gravida dignissim.
+    Curabitur vestibulum turpis eu orci lacinia consectetur.
+}
+
+% --- APA Style Quote Command --------------------------------
+%
+% Automatically formats quotes following APA style.
+% Short quotes (<40 words) are inline; long quotes are right-aligned blocks.
+%
+% Usage:
+%   \uitspraak{<quote text>}{<bibkey>}{<page>}
+%
+% Example:
+%   \uitspraak{Design is intelligence made visible.}{rand2020}{42}
+% ------------------------------------------------------------
+\newcommand{\uitspraak}[3]{%
+    \StrCount{#1}{ }[\woordenaantal]%
+    \ifthenelse{\woordenaantal < 39}{%
+        ``\textit{#1}'' (\citeauthor{#2}, \citeyear{#2}, p.~#3)%
+    }{%
+        \vsmall%
+        \begin{flushright}%
+            \parbox{0.95\linewidth}{\textit{#1}}\newline(\citeauthor{#2}, \citeyear{#2}, p.~#3)%
+        \end{flushright}%
+        \vsmall%
+    }%
+}
+
+% --- Parenthetical Citation with Pre/Post Text --------------
+%
+% Usage:
+%   \prepostparencite[see][, for more info]{key}
+%
+% Example:
+%   \prepostparencite[see][, for an overview]{doe2022}
+%
+% Produces: (see Doe, 2022, for an overview)
+% ------------------------------------------------------------
+\NewDocumentCommand{\prepostparencite}{oom}{%
+    (#1 \citeauthor{#3}, \citeyear{#3}#2)%
+}
+
+
+% --- Custom command: Title (Author, Date) ---
+% Usage: 
+%   \titlectite{key}
+%
+% Example:
+%   \titlectite{doe2022}
+%
+% Produces: Title (Author, Year)
+% ------------------------------------------------------------
+\newcommand{\titlectite}[1]{%
+    \citetitle{#1} (\citeauthor{#1}, \citefield{#1}{year})%
+}
+
+% --- text with lines on the left and right---- --------------
+%
+% Usage:
+%   \ruleline{text in the middle}
+%
+% Produces: --------- text in the middle ---------
+% |
+% \> where the line is columnwidth
+% ------------------------------------------------------------
+\newcommand*\ruleline[1]{\par\noindent\raisebox{.8ex}{\makebox[\linewidth]{\hrulefill\hspace{1ex}\raisebox{-.8ex}{\textbf{#1}}\hspace{1ex}\hrulefill}}}
+
+% ============================================================
+% 3. EDITOR TOOLS & COMMENTS
+% ============================================================
+%
+% This block defines tools for editors and reviewers to leave
+% inline comments, boxed remarks, or red footnotes.
+%
+% Controlled by the boolean \boolean{editorsversion}.
+% When false, all editor content is hidden.
+%
+% Provides:
+%   - \editorsonly{<text>}       → Inline comment
+%   - \begin{editorsonlyBox}...  → Boxed comment block
+%   - \editorsfootnote{<text>}   → Red footnote
+%
+% ============================================================
+\ifthenelse{\boolean{editorsversion}}{%
+% -------------------- EDITORS VERSION --------------------
+    \newcommand{\editorsonly}[1]{%
+        \par\vspace{0.05in}%
+        {\footnotesize\noindent\textcolor{red!70!black}{\textbf{Editor's note:} #1}}%
+        \par\vspace{0.05in}%
+    }
+
+    \newenvironment{editorsonlyBox}{%
+        \par\medskip%
+        \begin{tcolorbox}[%
+            enhanced,
+            breakable,
+            colback=red!5,
+            colframe=red!20!white,
+            boxrule=0pt,
+            borderline north={1pt}{0pt}{red!40!white},
+            sharp corners,
+            before skip=6pt,
+            after skip=6pt,
+            title={\textcolor{red!60!black}{\footnotesize Comment for editors:}},
+            coltitle=red!70!black,
+            fonttitle=\bfseries,
+            top=2pt,
+            bottom=2pt,
+            left=4pt,
+            right=4pt
+        ]%
+        }{%
+        \end{tcolorbox}%
+    }
+
+    \newcommand{\editorsfootnote}[1]{%
+        \textcolor{red!70!black}{\footnote{\textcolor{red!70!black}{Editor's note: #1}}}%
+    }
+
+    % Automatically cite all refs in .bib (for review phase)
+    \nocite{*}
+
+}{%
+% -------------------- STUDENT VERSION --------------------
+    \newcommand{\editorsonly}[1]{\ignorespaces}
+    \newenvironment{editorsonlyBox}{\comment}{\uncomment}
+    \newcommand{\editorsfootnote}[1]{}
+}
+
+
+% ============================================================
+% 4. TEXT PROCESSING UTILITIES
+% ============================================================
+%
+% Utilities that manipulate or conditionally display text.
+% Includes text splitting, and empty-argument checking.
+%
+% ============================================================
+
+% --- Split Text Every N Characters --------------------------
+%
+% Splits input text into lines of maximum <n> characters.
+%
+% Usage:
+%   \spliteveryn{<n>}{<text>}
+%
+% Example:
+%   \spliteveryn{10}{This is an example of splitting text.}
+%
+% ------------------------------------------------------------
+\ExplSyntaxOn
+\NewDocumentCommand{\spliteveryn}{mm}{
+    \str_set:Nn \l_tmpa_str { #2 }
+    \int_zero:N \l_tmpa_int
+    \str_map_inline:Nn \l_tmpa_str{
+        ##1
+        \int_incr:N \l_tmpa_int
+        \int_compare:nNnT { \l_tmpa_int } = { #1 }{
+            \\
+            \int_zero:N \l_tmpa_int
+        }
+    }
+}
+\ExplSyntaxOff
+
+% --- Conditional Execution if Non-Empty ---------------------
+%
+% Usage:
+%   \IfNonEmpty{<text>}{<action>}
+%
+% Executes <action> only if <text> is non-empty.
+% Commonly used for optional arguments in macros.
+%
+% Example:
+%   \IfNonEmpty{caption}{\caption{caption}}
+%
+% ------------------------------------------------------------
+\makeatletter
+\newcommand{\IfNonEmpty}[2]{%
+    \if\relax\detokenize{#1}\relax%
+    % empty → do nothing
+    \else%
+    #2%
+    \fi%
+}
+\makeatother
+
+
+% ============================================================
+% 5. SIMPLE TABLE ENVIRONMENT
+% ============================================================
+%
+% A consistent, minimal table layout system with helper macros
+% for headers, subheaders, highlights, and notes.
+%
+% Usage:
+%   \begin{SimpleTable}[<col spec>]{<caption>}{<label>}
+%       \TableHeader{Col A & Col B}
+%       \TableRow{Data 1 & Data 2}
+%       \TableSubHeader{Sub A & Sub B}
+%       \TableHighlightRow{Important & Entry}
+%       \TableNote{This is a note below the table.}
+%   \end{SimpleTable}
+%
+% Arguments:
+%   [<col spec>] : tabularx column layout (default: s{1} s{1})
+%   {<caption>}  : optional table caption
+%   {<label>}    : optional table label for referencing
+%
+% ============================================================
+\newcolumntype{s}[1]{>{\hsize=#1\hsize\relax\arraybackslash}X}
+
+\ExplSyntaxOn
+\NewExpandableDocumentCommand{\GenerateColumns}{m}
+{
+    \clist_set:Nn \l_tmpa_clist { #1 }
+    \clist_use:Nn \l_tmpa_clist { ~s }
+% OR simpler:
+    % \clist_map_inline:Nn \l_tmpa_clist { s{##1} }
+}
+\ExplSyntaxOff
+
+\NewEnviron{SimpleTable}[3][s{1} s{1}]{%
+    \scalefont{0.75}
+    \begin{tabularx}{\linewidth}{#1}
+        \BODY
+        \arrayrulecolor{black!80}\specialrule{1pt}{0pt}{0pt}\arrayrulecolor{black}
+    \end{tabularx}
+    \IfNonEmpty{#2}{\captionof{table}{#2}}%
+    \IfNonEmpty{#3}{\label{#3}}%
+}
+
+% --- Table Styling Macros ------------------------------------------------------
+
+% ========== Header Row ==========
+\NewDocumentCommand{\TableHeader}{>{\SplitArgument{7}{&}}m}{%
+    \tableheaderaux#1%
+}
+\NewDocumentCommand{\tableheaderaux}{mmmmmmmm}{%
+    \IfValueT{#1}{\textbf{#1}}%
+    \IfValueT{#2}{& \textbf{#2}}%
+    \IfValueT{#3}{& \textbf{#3}}%
+    \IfValueT{#4}{& \textbf{#4}}%
+    \IfValueT{#5}{& \textbf{#5}}%
+    \IfValueT{#6}{& \textbf{#6}}%
+    \IfValueT{#7}{& \textbf{#7}}%
+    \IfValueT{#8}{& \textbf{#8}}%
+    \\ \arrayrulecolor{black!80}\specialrule{1pt}{0pt}{0pt}\arrayrulecolor{black}
+}
+
+% ========== Normal Row ==========
+\NewDocumentCommand{\TableRow}{>{\SplitArgument{7}{&}}m}{%
+    \tablerowaux#1%
+}
+\NewDocumentCommand{\tablerowaux}{mmmmmmmm}{%
+    \IfValueT{#1}{#1}%
+    \IfValueT{#2}{& #2}%
+    \IfValueT{#3}{& #3}%
+    \IfValueT{#4}{& #4}%
+    \IfValueT{#5}{& #5}%
+    \IfValueT{#6}{& #6}%
+    \IfValueT{#7}{& #7}%
+    \IfValueT{#8}{& #8}%
+    \\ \arrayrulecolor{black!10}\specialrule{0.5pt}{1pt}{0pt}\arrayrulecolor{black}
+}
+
+% ========== Empty Row ==========
+\NewDocumentCommand{\TableEmpty}{}{\\}
+
+% ========== Subheader Row ==========
+\NewDocumentCommand{\TableSubHeader}{>{\SplitArgument{7}{&}}m}{%
+    \tablesubheaderaux#1%
+}
+\NewDocumentCommand{\tablesubheaderaux}{mmmmmmmm}{%
+    \IfValueT{#1}{\underline{\textbf{#1}}}%
+    \IfValueT{#2}{& \underline{\textbf{#2}}}%
+    \IfValueT{#3}{& \underline{\textbf{#3}}}%
+    \IfValueT{#4}{& \underline{\textbf{#4}}}%
+    \IfValueT{#5}{& \underline{\textbf{#5}}}%
+    \IfValueT{#6}{& \underline{\textbf{#6}}}%
+    \IfValueT{#7}{& \underline{\textbf{#7}}}%
+    \IfValueT{#8}{& \underline{\textbf{#8}}}%
+    \\[1pt]
+}
+
+% ========== Highlight Row ==========
+\NewDocumentCommand{\TableHighlightRow}{>{\SplitArgument{7}{&}}m}{%
+    \tablehighlightaux#1%
+}
+\NewDocumentCommand{\tablehighlightaux}{mmmmmmmm}{%
+    \IfValueT{#1}{\textbf{#1}}%
+    \IfValueT{#2}{& \textbf{#2}}%
+    \IfValueT{#3}{& \textbf{#3}}%
+    \IfValueT{#4}{& \textbf{#4}}%
+    \IfValueT{#5}{& \textbf{#5}}%
+    \IfValueT{#6}{& \textbf{#6}}%
+    \IfValueT{#7}{& \textbf{#7}}%
+    \IfValueT{#8}{& \textbf{#8}}%
+    \\ \arrayrulecolor{black!50}\specialrule{0.8pt}{1pt}{2pt}\arrayrulecolor{black}
+}
+
+% ========== Note Row ==========
+\NewDocumentCommand{\TableNote}{m}{%
+    \\[-2pt]\multicolumn{99}{l}{\footnotesize\textit{#1}} \\[3pt]%
+}
+
+% ========== Section Break ==========
+\NewDocumentCommand{\TableSectionBreak}{}{%
+    \\[-1pt]\arrayrulecolor{black!70}\specialrule{1.2pt}{3pt}{3pt}\arrayrulecolor{black}
+}
+
+% ========== Spacer ==========
+\NewDocumentCommand{\TableSpacer}{}{\\[-3pt]}
+
+% ============================================================
+% 5. Example enviroment
+% ============================================================
+%
+% A small added enviroment for creating a small example
+%
+% Usage:
+%   \begin{voorbeeld}[<label>]
+%       Just the text you want
+%   \end{voorbeeld}
+%
+% Arguments:
+%   [label] : The label you want ontop of the voorbeeld box
+%
+% ============================================================
+
+\newenvironment{voorbeeld}[1]
+{
+    \vsmall
+    \raggedright Voorbeeld \IfNonEmpty{#1}{\textbf{(#1)}}: \\
+    \vspace{1mm}
+    \hline
+    \vspace{1mm}
+}
+{
+    \vspace{1mm}
+    \\ \hline
+    \vsmall
+}
