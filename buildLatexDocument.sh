@@ -5,7 +5,7 @@ BASE_DIR="$(pwd)"
 SRC_DIR="$BASE_DIR/src"
 OUT_DIR="$BASE_DIR/out"
 MAIN_TEX="$SRC_DIR/main.tex"
-JOBNAME="Samenvatting_Databases"
+JOBNAME="Samenvatting_OICT"
 
 echo "=== Building LaTeX document ==="
 echo "Working directory: $BASE_DIR"
